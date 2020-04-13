@@ -6,9 +6,9 @@ var municipio = user.question("Escreva o nome da cidade: ")
 
 
 axios.get(`https://servicodados.ibge.gov.br/api/v1/localidades/municipios/${municipio}`)
-    .then(function (resposta){
+    .then(resposta=> {
         
-        console.log(`CODIGO MUNICIPIO: ${resposta.data.id}`);
+        console.log(`O codigo IBGE para consulta e:  ${resposta.data.id}`);
 })
 .catch(function (erro) {
     console.log("Municipio não existe, tente novamente")
